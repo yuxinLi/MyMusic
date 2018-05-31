@@ -1,1 +1,2 @@
-include ':app', ':PlayerLibrary', ':jnithread'
+//include ':app', ':PlayerLibrary', ':jnithread'
+include ':app', ':PlayerLibrary'

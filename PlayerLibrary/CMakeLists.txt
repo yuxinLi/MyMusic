@@ -9,8 +9,11 @@ add_library( # Sets the name of the library.
              # Sets the library as a shared library.
              SHARED
 
-             # Provides a relative path to your source file(s).
-             src/main/cpp/native-lib.cpp )
+             
+             src/main/cpp/native-lib.cpp
+             src/main/cpp/WlAudio.cpp
+             src/main/cpp/WlCallJava.cpp
+             src/main/cpp/WlFFmpeg.cpp)
 
 
 # ----------- FFmpeg begin ---------
