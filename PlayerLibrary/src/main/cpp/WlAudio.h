@@ -5,6 +5,9 @@
 #ifndef MYMUSIC_WLAUDIO_H
 #define MYMUSIC_WLAUDIO_H
 
+#include "WlPlayStatus.h"
+#include "WlQueue.h"
+
 
 extern "C"{
 #include "libavcodec/avcodec.h"
@@ -17,8 +20,11 @@ public:
     AVCodecContext *avCodecContext = NULL;
     AVCodecParameters *codecpar = NULL;
 
+    WlQueue *queue = NULL;
+    WlPlayStatus *playStatus = NULL;
+
 public:
-    WlAudio();
+    WlAudio(WlPlayStatus *playstatus);
     ~WlAudio();
 };
 

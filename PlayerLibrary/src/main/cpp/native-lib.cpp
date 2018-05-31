@@ -1,6 +1,7 @@
 #include <jni.h>
 #include <string>
 #include "WlFFmpeg.h"
+#include "WlPlaystatus.h"
 
 extern "C"{
 #include <libavformat/avformat.h>
@@ -9,6 +10,7 @@ extern "C"{
 _JavaVM *javaVM = NULL;
 WlCallJava *callJava = NULL;
 WlFFmpeg *fFmpeg = NULL;
+WlPlayStatus* playStatus = NULL;
 
 
 extern "C"
@@ -32,7 +34,8 @@ Java_com_example_playerlibrary_player_WlPlayer_n_1parpared(JNIEnv *env, jobject 
         if (callJava == NULL){
             callJava = new WlCallJava(javaVM , env , &instance);
         }
-        fFmpeg = new WlFFmpeg(callJava , source);
+        playStatus = new WlPlayStatus();
+        fFmpeg = new WlFFmpeg(playStatus ,callJava , source);
         fFmpeg->parpared();
     }
 }

@@ -4,8 +4,9 @@
 
 #include "WlAudio.h"
 
-WlAudio::WlAudio() {
-
+WlAudio::WlAudio(WlPlayStatus *playstatus) {
+    this->playStatus = playstatus;
+    queue = new WlQueue(playstatus);
 }
 
 WlAudio::~WlAudio() {
