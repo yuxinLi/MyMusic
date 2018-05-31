@@ -13,5 +13,26 @@ public class ThreadDemo {
 
 
     public native void normalThread();
+    public native void mutexThread();
 
+    private OnErrerListener onErrerListener;
+
+    public void setOnErrerListener(OnErrerListener onErrerListener) {
+        this.onErrerListener = onErrerListener;
+    }
+
+    public void onError(int code, String msg)
+    {
+        if(onErrerListener != null)
+        {
+            onErrerListener.onError(code, msg);
+        }
+    }
+
+    public interface OnErrerListener
+    {
+        void onError(int code, String msg);
+    }
+
+    public native void callbackFromC();
 }

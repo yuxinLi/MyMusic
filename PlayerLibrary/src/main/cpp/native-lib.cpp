@@ -40,3 +40,4 @@ Java_com_example_playerlibrary_Demo_stringFromJNI(JNIEnv *env, jobject instance)
 
     return env->NewStringUTF(hello.c_str());
 }
+
