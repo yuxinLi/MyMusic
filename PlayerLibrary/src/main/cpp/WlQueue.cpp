@@ -18,6 +18,7 @@ WlQueue::~WlQueue() {
 
 int WlQueue::putAvpacket(AVPacket *packet) {
 
+
     pthread_mutex_lock(&mutexPacket);
     queuePacket.push(packet);
     if(LOG_DEBUG)
